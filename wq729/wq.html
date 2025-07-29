@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pemulihan Dana Penipuan - Layanan Hukum Profesional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FF6B35;
+            --secondary-color: #FF8A50;
+            --success-color: #FF6B35;
+            --dark-bg: #000000;
+            --light-bg: #111111;
+            --text-dark: #FFFFFF;
+            --text-light: #FFFFFF;
+            --gradient-bg: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+            --shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--dark-bg);
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background: var(--gradient-bg);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            color: var(--text-light);
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .text-content {
+            padding: 20px;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .hero-image, .content-image {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin: 0 auto;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-image, .content-image {
+                height: 250px;
+                max-width: 100%;
+                border-radius: 15px;
+            }
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--secondary-color), #FF8A65);
+            color: var(--text-light);
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .stat-card {
+            background: var(--light-bg);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .case-types {
+            background: #1a1a1a;
+            border: 1px solid #333333;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .case-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #333333;
+        }
+
+        .case-item:last-child {
+            border-bottom: none;
+        }
+
+        .case-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .case-count {
+            color: var(--success-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .step-card {
+            background: var(--light-bg);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            border: none;
+            padding: 20px 60px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            animation: breathe 2s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+
+        .footer {
+            background: #111111;
+            color: var(--text-light);
+            padding: 60px 20px 20px;
+            text-align: center;
+        }
+
+        .disclaimer {
+            background: #F8F9FA;
+            padding: 40px 20px;
+            border-top: 3px solid var(--primary-color);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #6C757D;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin: 30px 0;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 0;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            border-bottom-color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 40px 15px 15px;
+            }
+            
+            .section {
+                padding: 60px 15px;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .floating-button {
+                left: 20px;
+                right: 20px;
+                transform: none;
+                width: calc(100% - 40px);
+                padding: 15px 20px;
+                font-size: 1.1rem;
+            }
+            
+            @keyframes breathe {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.02); }
+            }
+            
+            .case-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .stat-card {
+                padding: 25px 20px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+                margin-bottom: 8px;
+            }
+            
+            .stat-label {
+                font-size: 0.95rem;
+            }
+        }
+
+        .dark-mode {
+            background: var(--dark-bg);
+            color: var(--text-light);
+        }
+
+        .dark-mode .stat-card,
+        .dark-mode .step-card {
+            background: #2C3E50;
+            color: var(--text-light);
+        }
+
+        .dark-mode .case-types {
+            background: #34495E;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: var(--dark-bg);
+                color: var(--text-light);
+            }
+            
+            .stat-card,
+            .step-card {
+                background: #2C3E50;
+                color: var(--text-light);
+            }
+            
+            .case-types {
+                background: #34495E;
+            }
+        }
+
+        .verification-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .verification-content {
+            background: var(--light-bg);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.3);
+            border: 2px solid var(--primary-color);
+        }
+
+        .verification-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .verification-text {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .verification-question {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .verification-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            text-align: center;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            background: #222;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .verification-input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .verification-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .verification-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+        }
+
+        .btn-cancel {
+            background: #666;
+            color: var(--text-light);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-cancel:hover {
+            background: #777;
+        }
+
+        .error-message {
+            color: #ff4444;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Apakah Anda Mengira Dana yang Ditipu Tidak Bisa Dikembalikan?</h1>
+            <p class="hero-subtitle">Sebenarnya, peluang sukses lebih tinggi dari yang Anda bayangkan!</p>
+            <img src="img/1.jpg" alt="Tim Ahli Hukum Profesional" class="hero-image">
+            <br><br>
+            <button class="cta-button" onclick="r2()">Hubungi Kami Sekarang</button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="content-grid">
+            <div class="text-content">
+                <h2 class="section-title">Masalah Penipuan Semakin Serius</h2>
+                <p class="content-text">
+                    Masalah penipuan di bidang saham, emas, reksa dana, dan transfer saham semakin serius, terutama di bidang mata uang kripto. Banyak orang menghadapi situasi sulit akibat dana yang ditipu. Jangan khawatir! Kami menggabungkan teknologi terkini dengan pengalaman bertahun-tahun untuk membantu Anda memulihkan dana yang ditipu dan memastikan kepentingan Anda dipulihkan secara maksimal.
+                </p>
+                <button class="cta-button" onclick="r2()">Dapatkan Konsultasi Hukum Gratis</button>
+            </div>
+            <div>
+                <img src="img/2.jpg" alt="Layanan Konsultasi Hukum" class="content-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section">
+        <div class="content-grid">
+             
+            <div class="text-content">
+                <h2 class="section-title">Terjebak dalam Penipuan? Apa yang Harus Anda Lakukan?</h2>
+                <p class="content-text">
+                    Mengalami penipuan mungkin membuat Anda merasa tidak berdaya dan cemas, tapi percayalah, kami bisa membantu Anda! Tim pengacara kami fokus menangani berbagai kasus penipuan dengan pengalaman yang kaya, memberikan dukungan hukum menyeluruh dan saran profesional. Baik itu penipuan online, penipuan investasi, atau penipuan kontrak, kami akan membantu Anda menganalisis kasus dan menyusun strategi perlindungan hak yang efektif untuk memulihkan kerugian Anda.
+                </p>
+                <button class="cta-button" onclick="r2()">Jangan Menyerah! Biarkan Kami Membantu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="section">
+        <h2 class="section-title">Pencapaian Kami</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Kantor Cabang</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">240+</div>
+                <div class="stat-label">Penghargaan</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1200+</div>
+                <div class="stat-label">Total Personel</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">97.8%</div>
+                <div class="stat-label">Tingkat Keberhasilan</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Services -->
+    <section class="section">
+        <div class="content-grid">
+            <div class="text-content">
+                <h2 class="section-title">Bidang Keahlian</h2>
+                <p class="content-text">
+                    Apakah Anda korban kasus penipuan? Segera hubungi kami! Kami menyediakan solusi pemulihan kerugian dan layanan kompensasi profesional.
+                </p>
+                <div class="case-types">
+                    <div class="case-item">
+                        <span class="case-name">Kasus Mata Uang Kripto</span>
+                        <span class="case-count">2100+ Kasus Berhasil</span>
+                    </div>
+                    <div class="case-item">
+                        <span class="case-name">Kerugian Pekerjaan Paruh Waktu</span>
+                        <span class="case-count">8000+ Kasus Berhasil</span>
+                    </div>
+                    <div class="case-item">
+                        <span class="case-name">Sengketa Pertemanan Online</span>
+                        <span class="case-count">2200+ Kasus Berhasil</span>
+                    </div>
+                    <div class="case-item">
+                        <span class="case-name">Masalah Kartu Hadiah</span>
+                        <span class="case-count">1200+ Kasus Berhasil</span>
+                    </div>
+                    <div class="case-item">
+                        <span class="case-name">Kerugian Investasi Keuangan</span>
+                        <span class="case-count">5000+ Kasus Berhasil</span>
+                    </div>
+                </div>
+                <button class="cta-button" onclick="r2()">Lindungi Kepentingan Investasi Anda</button>
+            </div>
+            <div>
+                <img src="img/3.jpg" alt="Kasus Sukses Kami" class="content-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section">
+        <h2 class="section-title">Tim Profesional Kami</h2>
+        <p class="content-text" style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+            Tim kami terdiri dari para elit lulusan fakultas hukum terkenal dalam dan luar negeri, dengan dasar teori yang solid dan pengalaman praktik yang kaya. Kami tidak hanya memberikan pendapat profesional, tetapi juga berusaha memberikan perspektif penilaian yang komprehensif kepada klien. Tim bisnis luar negeri kami bekerja sama dengan pengacara luar negeri yang unggul untuk memberikan layanan yang lebih baik kepada warga Tionghoa di luar negeri, yang telah menjadi ciri khas kami.
+        </p>
+        <div style="text-align: center;">
+            <button class="cta-button" onclick="r2()">Pelajari Lebih Lanjut tentang Kasus Sukses</button>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section">
+        <h2 class="section-title">Alur Layanan</h2>
+        <div class="process-steps">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Konsultasi Awal</h3>
+                <p>Berkomunikasi dengan tim dukungan online kami, bagikan situasi Anda, dan jawab pertanyaan apa pun.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Grup Khusus</h3>
+                <p>Membuat grup independen untuk setiap klien, menyediakan dukungan profesional online 24 jam, menjawab pertanyaan kapan saja.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Strategi Hukum</h3>
+                <p>Tim pengacara kami menyusun strategi litigasi dan mendiskusikan isi kasus serta solusi dengan Anda.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <img src="img/4.jpg" alt="Proses Layanan Profesional" class="content-image">
+        </div>
+    </section>
+
+
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+        <h3 style="color: var(--text-dark); margin-bottom: 20px;">Pengungkapan Penting</h3>
+        <p><strong>Peringatan Risiko:</strong> Layanan pemulihan dana melibatkan proses hukum yang kompleks dan hasilnya tidak dapat dijamin 100%. Tingkat keberhasilan dapat bervariasi tergantung pada kompleksitas kasus, bukti yang tersedia, dan faktor hukum lainnya.</p>
+        <br>
+        <p><strong>Tidak Ada Jaminan:</strong> Meskipun kami memiliki pengalaman dan tingkat keberhasilan yang tinggi, setiap kasus bersifat unik dan kami tidak dapat menjamin hasil tertentu. Semua layanan disediakan berdasarkan upaya terbaik dengan standar profesional yang tinggi.</p>
+        <br>
+        <p><strong>Kepatuhan Hukum:</strong> Semua layanan kami beroperasi dalam kerangka hukum yang berlaku. Kami berkomitmen untuk mematuhi semua regulasi keuangan dan hukum yang relevan di yurisdiksi tempat kami beroperasi.</p>
+        <br>
+        <p><strong>Konsultasi Profesional:</strong> Informasi yang disediakan di situs ini hanya untuk tujuan informasi umum dan tidak dimaksudkan sebagai nasihat hukum atau keuangan. Disarankan untuk berkonsultasi dengan profesional yang qualified untuk situasi spesifik Anda.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="privacy.html" target="_blank">Kebijakan Privasi</a>
+            <a href="terms.html" target="_blank">Syarat & Ketentuan</a>
+        </div>
+        <p>&copy; 2024 Layanan Pemulihan Dana Profesional. Semua hak dilindungi.</p>
+    </footer>
+
+    <!-- Floating Button -->
+    <button class="floating-button" onclick="r2()">💬 KONSULTASI GRATIS</button>
+
+    <!-- Verification Modal -->
+    <div id="verificationModal" class="verification-modal">
+        <div class="verification-content">
+            <h3 class="verification-title">Verifikasi Keamanan</h3>
+            <p class="verification-text">Kami akan mengalokasikan pengacara perlindungan hak profesional untuk Anda. Silakan masukkan kode verifikasi yang benar:</p>
+            <div id="verificationQuestion" class="verification-question">5 + 3 = ?</div>
+            <input type="number" id="verificationInput" class="verification-input" placeholder="Masukkan jawaban">
+            <div class="verification-buttons">
+                <button class="verification-btn btn-submit" onclick="verifyAnswer()">Kirim</button>
+                <button class="verification-btn btn-cancel" onclick="hideVerificationModal()">Batal</button>
+            </div>
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+    </div>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        let currentAnswer = 0;
+
+        // Generate verification question
+        function generateVerification() {
+            const num1 = Math.floor(Math.random() * 10);
+            const num2 = Math.floor(Math.random() * 10);
+            currentAnswer = num1 + num2;
+            return `${num1} + ${num2} = ?`;
+        }
+
+        // Show verification modal
+        function showVerificationModal() {
+            const modal = document.getElementById('verificationModal');
+            const question = document.getElementById('verificationQuestion');
+            const input = document.getElementById('verificationInput');
+            const errorMsg = document.getElementById('errorMessage');
+            
+            question.textContent = generateVerification();
+            input.value = '';
+            errorMsg.textContent = '';
+            modal.style.display = 'flex';
+            input.focus();
+        }
+
+        // Hide verification modal
+        function hideVerificationModal() {
+            document.getElementById('verificationModal').style.display = 'none';
+        }
+
+        // Verify answer and redirect
+        function verifyAnswer() {
+            const input = document.getElementById('verificationInput');
+            const errorMsg = document.getElementById('errorMessage');
+            const userAnswer = parseInt(input.value);
+            
+            if (userAnswer === currentAnswer) {
+                hideVerificationModal();
+                window.open('https://wa.me/1234567890?text=Halo,%20saya%20tertarik%20dengan%20layanan%20pemulihan%20dana%20Anda', '_blank');
+            } else {
+                errorMsg.textContent = 'Kode verifikasi salah, silakan coba lagi!';
+                input.value = '';
+                input.focus();
+            }
+        }
+
+        // Updated r2 function
+        function r2() {
+            showVerificationModal();
+        }
+
+        // Allow Enter key to submit
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('verificationInput');
+            if (input) {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        verifyAnswer();
+                    }
+                });
+            }
+        });
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to elements
+        document.querySelectorAll('.stat-card, .step-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
