@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-	  <script>
+  <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -19,9 +18,9 @@ src="https://www.facebook.com/tr?id=1064651635650721&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gratis Aandelengemeenschap</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Nout Wellink - Professional Stock Investment Community</title>
     <style>
         * {
             margin: 0;
@@ -30,540 +29,693 @@ src="https://www.facebook.com/tr?id=1064651635650721&ev=PageView&noscript=1"
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: radial-gradient(ellipse at center, #001428 0%, #000a14 70%, #000000 100%);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d2d5f 100%);
             color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-
-        .star {
-            position: absolute;
-            background: #ffffff;
-            border-radius: 50%;
-            animation: twinkle 3s infinite;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 380px;
-            width: 90%;
-            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .hero-section {
+            padding: 60px 0;
             text-align: center;
-            position: relative;
-            z-index: 10;
-            background: linear-gradient(145deg, rgba(0, 40, 80, 0.15), rgba(0, 20, 40, 0.25));
-            backdrop-filter: blur(20px);
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        .logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 25px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.4);
-        }
-
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            background: linear-gradient(45deg, #ffffff, #87ceeb, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-        }
-
-        .subtitle {
-            font-size: 16px;
-            color: #87ceeb;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        .benefits {
-            text-align: left;
-            margin-bottom: 35px;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 18px;
-            padding: 12px;
-            background: rgba(0, 102, 204, 0.1);
-            border-radius: 12px;
-            border-left: 3px solid #0066cc;
-        }
-
-        .benefit-icon {
-            color: #00ff88;
-            font-size: 20px;
-            margin-right: 15px;
-            margin-top: 2px;
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-        }
-
-        .benefit-text {
-            font-size: 14px;
-            line-height: 1.5;
-            color: #e6f3ff;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #0066cc, #004499, #002266);
-            border: none;
-            color: white;
-            padding: 18px 50px;
-            font-size: 18px;
-            font-weight: 700;
-            border-radius: 50px;
-            cursor: pointer;
-            width: 100%;
+            background: linear-gradient(45deg, #2c3e50 0%, #34495e 100%);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 102, 204, 0.4);
-            transition: all 0.3s ease;
-            animation: breathe 3s infinite ease-in-out;
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
+
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0, 102, 204, 0.6);
-        }
-
-        @keyframes breathe {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 15px 35px rgba(0, 102, 204, 0.4);
-            }
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 20px 45px rgba(0, 102, 204, 0.6);
-            }
-        }
-
-        .free-badge {
-            background: linear-gradient(45deg, #00ff88, #00cc6a);
-            color: #000;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
-            animation: glow 2s infinite alternate;
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            border: 5px solid #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
         }
 
         @keyframes glow {
-            from { box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3); }
-            to { box-shadow: 0 5px 25px rgba(0, 255, 136, 0.6); }
+            from { box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3); }
+            to { box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6); }
         }
 
-        .legal-links {
-            margin-top: 20px;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .legal-links a {
-            color: rgba(135, 206, 235, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .legal-links a:hover {
-            color: #87ceeb;
-        }
-
-        .separator {
-            margin: 0 8px;
-            color: rgba(255, 255, 255, 0.4);
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-        }
-
-        .modal-content {
-            background: linear-gradient(145deg, rgba(0, 40, 80, 0.95), rgba(0, 20, 40, 0.95));
-            margin: 5% auto;
-            padding: 30px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 600px;
-            max-height: 80vh;
-            overflow-y: auto;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
+        .hero-title {
+            font-size: 2.5rem;
             font-weight: bold;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titlePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+        }
+
+        /* Urgent Banner */
+        .urgent-banner {
+            background: linear-gradient(45deg, #ff4757, #ff3742);
+            padding: 20px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255, 71, 87, 0.3);
+            animation: urgentPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes urgentPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .urgent-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.4);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 60px 0;
+        }
+
+        .benefits-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .benefits-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #ffd700;
+            backdrop-filter: blur(10px);
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .benefit-item:before {
+            content: '✓';
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        /* Carousel Section */
+        .carousel-section {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .carousel-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ffd700;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: calc(100vw * 16 / 9);
+            max-height: 800px;
+            object-fit: cover;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #ffd700;
+            transform: scale(1.2);
+        }
+
+        /* Action Buttons */
+        .action-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 15px;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            animation: buttonPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+        }
+
+        /* WhatsApp Icon */
+        .whatsapp-icon {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
             cursor: pointer;
         }
 
-        .close:hover {
-            color: #fff;
-        }
-
-        .modal h2 {
-            color: #87ceeb;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .modal h3 {
-            color: #ffffff;
-            margin: 20px 0 10px 0;
-            font-size: 18px;
-        }
-
-        .modal p, .modal li {
-            color: #e6f3ff;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .modal ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        .footer-info {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .copyright {
-            margin-bottom: 15px;
-        }
-
-        .copyright p {
-            margin-bottom: 5px;
-        }
-
-        .contact-info p {
-            margin-bottom: 5px;
+        .whatsapp-btn {
+            background: #25D366;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            animation: breathe 2s ease-in-out infinite;
+            position: relative;
         }
 
-        @media (max-height: 700px) {
-            .container {
-                padding: 20px 15px;
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .whatsapp-btn svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff4757;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Floating Bottom Button */
+        .floating-btn {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 -10px 30px rgba(255, 107, 107, 0.4);
+            animation: floatingBreathe 3s ease-in-out infinite;
+        }
+
+        @keyframes floatingBreathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .floating-btn:hover {
+            background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 30px 0;
             }
-            .logo {
-                width: 60px;
-                height: 60px;
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .urgent-banner {
+                margin: 20px 0;
+                padding: 15px;
+            }
+
+            .urgent-text {
+                font-size: 1.4rem;
+            }
+
+            .stats-section {
+                padding: 30px 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
                 margin-bottom: 20px;
-                font-size: 24px;
             }
-            h1 {
-                font-size: 24px;
+
+            .stat-card {
+                padding: 20px;
             }
+
+            .benefits-section {
+                padding: 30px 0;
+            }
+
+            .benefits-title {
+                margin-bottom: 30px;
+            }
+
             .benefit-item {
-                margin-bottom: 12px;
-                padding: 8px;
+                padding: 20px;
+                margin-bottom: 15px;
             }
-            .cta-button {
-                padding: 15px 40px;
-                font-size: 16px;
+
+            .carousel-section {
+                padding: 30px 0;
             }
-            .legal-links {
-                margin-top: 15px;
+
+            .carousel-title {
+                margin-bottom: 25px;
             }
+
+            .carousel-slide img {
+                height: calc(100vw * 16 / 9);
+                max-height: 711px;
+            }
+
+            .carousel-container {
+                max-width: 90vw;
+            }
+
+            .final-cta {
+                padding: 30px 0 80px;
+            }
+
+            .whatsapp-icon {
+                right: 15px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            section.container {
+                padding: 20px 15px !important;
+            }
+        }
+
+        /* Free Spots Section */
+        .free-spots-section {
+            padding: 40px 0;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .free-spots-card {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 25px;
+            padding: 40px 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: spotsGlow 3s ease-in-out infinite;
+            border: 3px solid #ff4757;
+            position: relative;
+        }
+
+        @keyframes spotsGlow {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 71, 87, 0.5);
+            }
+            50% { 
+                transform: scale(1.05); 
+                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 50px rgba(255, 71, 87, 0.8);
+            }
+        }
+
+        .free-spots-card::before {
+            content: '🔥';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 2rem;
+            animation: flame 2s ease-in-out infinite;
+        }
+
+        .free-spots-card::after {
+            content: '🔥';
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            font-size: 2rem;
+            animation: flame 2s ease-in-out infinite reverse;
+        }
+
+        @keyframes flame {
+            0%, 100% { transform: rotate(-10deg) scale(1); }
+            50% { transform: rotate(10deg) scale(1.2); }
+        }
+
+        .spots-number {
+            font-size: 6rem;
+            font-weight: 900;
+            color: #ff4757;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+            animation: numberPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes numberPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .spots-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .spots-subtitle {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 15px;
+            animation: subtitleBlink 3s ease-in-out infinite;
+        }
+
+        @keyframes subtitleBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 60px 0 100px;
+            text-align: center;
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+        }
+
+        .final-cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #ffd700;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #e0e0e0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
-    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <img src="img/1.jpg" alt="Nout Wellink" class="profile-img">
+                <h1 class="hero-title">Nout Wellink</h1>
+                <p class="hero-subtitle">Nederlandse Econoom & Voormalig Centrale Bankier</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgent Banner -->
     <div class="container">
-        <img src="https://www.kwey616t.shop/hena2/img/1.jpg" alt="Investment Expert" class="logo">
-        
-        <div class="free-badge">100% GRATIS</div>
-        <h1>Aandelengemeenschap</h1>
-        <p class="subtitle">Word gratis lid en ontvang:</p>
-        
-        <div class="benefits">
-            <div class="benefit-item">
-                <span class="benefit-icon">✓</span>
-                <span class="benefit-text">Professionele analyse van 1-3 geselecteerde aandelen per week</span>
+        <div class="urgent-banner" onclick="d2()" style="cursor: pointer;">
+            <div class="urgent-text">Aandelinvesteerdersgemeenschap Beperkte Tijd Open</div>
+        </div>
+    </div>
+
+    
+
+     
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Positieve Beoordeling</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">31,281</div>
+                    <div class="stat-label">Totaal Leden</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98.7%</div>
+                    <div class="stat-label">Voorspellingsnauwkeurigheid</div>
+                </div>
             </div>
-            <div class="benefit-item">
-                <span class="benefit-icon">✓</span>
-                <span class="benefit-text">Markttrend inzichten voor fondsen, aandelen en blue-chip stocks</span>
-            </div>
-            <div class="benefit-item">
-                <span class="benefit-icon">✓</span>
-                <span class="benefit-text">Gratis en hoogwaardige investeringsinformatie zonder kosten</span>
+            <div style="text-align: center;">
+                <button class="action-btn" onclick="d2()">Word Nu Lid</button>
             </div>
         </div>
-        
-        <button class="cta-button" onclick="d2()">
-            Sluit je bij ons aan
+    </section>
+ 
+ 
+    <section class="carousel-section">
+        <div class="container">
+            <h2 class="carousel-title">Echte Casestudies</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide">
+                        <img src="img/1-1.jpg" alt="Case Study 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/1-2.jpg" alt="Case Study 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/1-3.jpg" alt="Case Study 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/1-4.jpg" alt="Case Study 4">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+  
+    <!-- WhatsApp Icon -->
+    <div class="whatsapp-icon">
+        <button class="whatsapp-btn" onclick="d2()">
+            <svg viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.525 3.687"/>
+            </svg>
+            <div class="notification-badge">1</div>
         </button>
-        
-        <div class="legal-links">
-            <a href="#" onclick="showPrivacy()">Privacybeleid</a>
-            <span class="separator">|</span>
-            <a href="#" onclick="showTerms()">Gebruiksvoorwaarden</a>
-        </div>
-        
-        <div class="footer-info">
-            <div class="copyright">
-                <p>© 2025 Aandelengemeenschap. Alle rechten voorbehouden.</p>
-            </div>
-            <div class="contact-info"> 
-              
-            </div>
-        </div>
     </div>
 
-    <!-- Privacy Policy Modal -->
-    <div id="privacyModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('privacyModal')">&times;</span>
-            <h2>Privacybeleid</h2>
-            
-            <h3>1. Inleiding</h3>
-            <p>Welkom bij onze gratis aandelengemeenschap. Wij respecteren uw privacy en zijn toegewijd aan het beschermen van uw persoonlijke gegevens. Dit privacybeleid legt uit hoe wij informatie verzamelen, gebruiken en beschermen.</p>
-            
-            <h3>2. Informatie die wij verzamelen</h3>
-            <p>Wanneer u zich aanmeldt voor onze gratis service, kunnen wij de volgende informatie verzamelen:</p>
-            <ul>
-                <li>Contactgegevens (WhatsApp nummer)</li>
-                <li>Communicatievoorkeuren</li>
-                <li>Interesse in specifieke aandelen of marktsegmenten</li>
-            </ul>
-            
-            <h3>3. Hoe wij uw informatie gebruiken</h3>
-            <p>Uw informatie wordt uitsluitend gebruikt voor:</p>
-            <ul>
-                <li>Het versturen van wekelijkse aandelenanalyses (1-3 aandelen)</li>
-                <li>Het delen van markttrend inzichten voor fondsen en blue-chip aandelen</li>
-                <li>Het leveren van gratis investeringsinformatie</li>
-                <li>Communicatie via WhatsApp over onze services</li>
-            </ul>
-            
-            <h3>4. Gegevensdeling</h3>
-            <p>Wij verkopen, verhuren of delen uw persoonlijke informatie niet met derden. Uw gegevens blijven vertrouwelijk en worden alleen gebruikt voor de doeleinden beschreven in dit beleid.</p>
-            
-            <h3>5. Gegevensbeveiliging</h3>
-            <p>Wij nemen passende technische en organisatorische maatregelen om uw persoonlijke gegevens te beschermen tegen ongeautoriseerde toegang, wijziging, openbaarmaking of vernietiging.</p>
-            
-            <h3>6. Uw rechten</h3>
-            <p>U heeft het recht om:</p>
-            <ul>
-                <li>Toegang te vragen tot uw persoonlijke gegevens</li>
-                <li>Correctie van onjuiste gegevens te verzoeken</li>
-                <li>Verwijdering van uw gegevens aan te vragen</li>
-                <li>U op elk moment af te melden voor onze service</li>
-            </ul>
-            
-            <h3>7. Bewaartermijn</h3>
-            <p>Wij bewaren uw persoonlijke gegevens alleen zolang dit nodig is voor het leveren van onze gratis service en het nakomen van onze wettelijke verplichtingen.</p>
-            
-            <h3>8. Contact</h3>
-            <p>Voor vragen over dit privacybeleid of uw persoonlijke gegevens, kunt u contact met ons opnemen via WhatsApp.</p>
-            
-            <p><strong>Laatst bijgewerkt:</strong> Januari 2024</p>
-        </div>
-    </div>
-
-    <!-- Terms Modal -->
-    <div id="termsModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('termsModal')">&times;</span>
-            <h2>Gebruiksvoorwaarden</h2>
-            
-            <h3>1. Algemene bepalingen</h3>
-            <p>Door lid te worden van onze gratis aandelengemeenschap via WhatsApp, accepteert u deze gebruiksvoorwaarden volledig. Deze voorwaarden zijn van toepassing op alle diensten die wij aanbieden.</p>
-            
-            <h3>2. Servicebeschrijving</h3>
-            <p>Onze gratis aandelengemeenschap biedt u:</p>
-            <ul>
-                <li>Wekelijks 1-3 professioneel geanalyseerde aandelen met gedetailleerde uitleg</li>
-                <li>Exclusieve markttrend inzichten voor fondsen, individuele aandelen en blue-chip stocks</li>
-                <li>Hoogwaardige investeringsinformatie en educatief materiaal</li>
-                <li>Toegang tot onze WhatsApp community voor discussies en updates</li>
-            </ul>
-            
-            <h3>3. Gratis toegang en voorwaarden</h3>
-            <p>Onze service is 100% gratis. Er zijn geen verborgen kosten, abonnementskosten of verplichtingen tot aankoop. Wij behouden ons het recht voor om de service te beëindigen of te wijzigen zonder voorafgaande kennisgeving.</p>
-            
-            <h3>4. Gebruikersverantwoordelijkheden</h3>
-            <p>Als lid van onze gemeenschap gaat u akkoord met het volgende:</p>
-            <ul>
-                <li>Respectvolle communicatie binnen de WhatsApp groep</li>
-                <li>Geen spam, reclame of ongepaste content delen</li>
-                <li>Eigen onderzoek doen voordat u investeringsbeslissingen neemt</li>
-                <li>De vertrouwelijkheid van gedeelde informatie respecteren</li>
-            </ul>
-            
-            <h3>5. Disclaimer en risicowaarschuwing</h3>
-            <p><strong>BELANGRIJK:</strong> Alle verstrekte informatie dient uitsluitend voor educatieve doeleinden. Dit is geen persoonlijk financieel advies. Beleggen in aandelen brengt aanzienlijke risico's met zich mee:</p>
-            <ul>
-                <li>Alle beleggingen kunnen in waarde dalen en stijgen</li>
-                <li>Verlies van kapitaal is mogelijk</li>
-                <li>Prestaties uit het verleden bieden geen garantie voor de toekomst</li>
-                <li>Raadpleeg altijd een gekwalificeerde financiële adviseur</li>
-            </ul>
-            
-            <h3>6. Intellectueel eigendom</h3>
-            <p>Alle content, analyses en materialen die wij delen zijn eigendom van onze aandelengemeenschap. Het is niet toegestaan om deze te reproduceren, distribueren of commercieel te gebruiken zonder schriftelijke toestemming.</p>
-            
-            <h3>7. Aansprakelijkheid</h3>
-            <p>Wij aanvaarden geen aansprakelijkheid voor:</p>
-            <ul>
-                <li>Financiële verliezen als gevolg van beleggingsbeslissingen</li>
-                <li>Technische problemen met WhatsApp of andere communicatiekanalen</li>
-                <li>Vertragingen in het verstrekken van informatie</li>
-                <li>Eventuele fouten of onvolkomenheden in onze analyses</li>
-            </ul>
-            
-            <h3>8. Beëindiging van lidmaatschap</h3>
-            <p>U kunt uw lidmaatschap op elk moment beëindigen door een bericht te sturen naar onze WhatsApp. Wij kunnen uw toegang beëindigen bij schending van deze voorwaarden.</p>
-            
-            <h3>9. Wijzigingen in voorwaarden</h3>
-            <p>Wij behouden ons het recht voor deze gebruiksvoorwaarden te wijzigen. Belangrijke wijzigingen worden aangekondigd via WhatsApp. Voortgezet gebruik na wijzigingen betekent acceptatie van de nieuwe voorwaarden.</p>
-            
-            <h3>10. Toepasselijk recht</h3>
-            <p>Deze gebruiksvoorwaarden vallen onder Nederlands recht. Geschillen worden voorgelegd aan de bevoegde Nederlandse rechtbank.</p>
-            
-            <p><strong>Contact:</strong> Voor vragen over deze voorwaarden kunt u contact opnemen via WhatsApp.</p>
-            <p><strong>Laatst bijgewerkt:</strong> Januari 2024</p>
-        </div>
-    </div>
+    <!-- Floating Bottom Button -->
+    <button class="floating-btn" onclick="d2()">
+        🚀 Word Nu Lid - Laatste 20 Gratis Plaatsen! 🚀
+    </button>
 
     <script>
-        // Create twinkling stars
-        function createStars() {
-            const starsContainer = document.querySelector('.stars');
-            for (let i = 0; i < 50; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.width = star.style.height = Math.random() * 3 + 1 + 'px';
-                star.style.animationDelay = Math.random() * 3 + 's';
-                starsContainer.appendChild(star);
-            }
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+        const track = document.getElementById('carouselTrack');
+        const dotsContainer = document.getElementById('carouselDots');
+
+        // Create dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
         }
 
-        createStars();
-
-        // Dark mode support
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
         }
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            if (event.matches) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        // Auto-advance carousel
+        setInterval(nextSlide, 3000);
+
+        // d2() function placeholder - replace with actual WhatsApp link
+         
+        // Prevent zoom on mobile
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
             }
+        }, { passive: false });
+
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Remove lazy loading - show all elements immediately
+        document.querySelectorAll('.stat-card, .benefit-item').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
         });
-
-       
-        function showPrivacy() {
-            document.getElementById('privacyModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function showTerms() {
-            document.getElementById('termsModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const privacyModal = document.getElementById('privacyModal');
-            const termsModal = document.getElementById('termsModal');
-            if (event.target == privacyModal) {
-                closeModal('privacyModal');
-            }
-            if (event.target == termsModal) {
-                closeModal('termsModal');
-            }
-        }
     </script>
+</body>
 
-	 <script>
+ <script>
   function d2() {
     fbq('track', 'Contact');  
     window.location.href = "https://sdun.io/UJigYE"; 
   }
 </script>
-</body>
 
 </html>
-
-
-
-
-
-
-
-
-
