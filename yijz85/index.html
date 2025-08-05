@@ -11,9 +11,31 @@
   gtag('config', 'AW-17384963619');
 </script>
 
+    <!-- Event snippet for 22 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17384963619/bZMlCMajkoAbEKP85eFA',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+
+
+    
     <script>
   function d2() { 
-            window.open('https://t.me/your_telegram_channel', '_blank');
+      gtag_report_conversion('https://t.me/your_telegram_channel'); 
         }
     </script>
     <meta charset="UTF-8">
@@ -987,4 +1009,5 @@ Lavora sempre e ovunque</p>
 </body>
 
 </html>
+
 
