@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17384963619"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -30,14 +30,18 @@ function gtag_report_conversion(url) {
 }
 </script>
 
-
-
-    
-    <script>
-  function d2() { 
-      gtag_report_conversion('https://url66.xyz/s/ELYhBJfEV'); 
+<script>
+ 
+        function d2() {
+       
+              gtag_report_conversion('https://url66.xyz/s/ELYhBJfEV'); 
         }
-    </script>
+ 
+        function openWhatsApp() {
+          gtag_report_conversion('https://wa.me/1111111111111111');  
+        }
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lavoro Part-time Remoto | Opportunità Flessibili</title>
@@ -52,7 +56,8 @@ function gtag_report_conversion(url) {
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333; 
+            color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
         }
 
         .container {
@@ -61,19 +66,25 @@ function gtag_report_conversion(url) {
             padding: 0 20px;
         }
 
-        /* Floating Telegram Icon */
-        .telegram-float {
+        /* Floating Social Icons */
+        .social-float {
             position: fixed;
             right: 30px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-icon-item {
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .telegram-float:hover {
-            transform: translateY(-50%) scale(1.1);
+        .social-icon-item:hover {
+            transform: scale(1.1);
         }
 
         .telegram-icon-container {
@@ -90,6 +101,24 @@ function gtag_report_conversion(url) {
         }
 
         .telegram-icon-container i {
+            color: white;
+            font-size: 28px;
+        }
+
+        .whatsapp-icon-container {
+            position: relative;
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            animation: pulse 2s infinite 0.5s;
+        }
+
+        .whatsapp-icon-container i {
             color: white;
             font-size: 28px;
         }
@@ -544,16 +573,18 @@ function gtag_report_conversion(url) {
 
         /* Responsive */
         @media (max-width: 768px) {
-            .telegram-float {
+            .social-float {
                 right: 20px;
             }
 
-            .telegram-icon-container {
+            .telegram-icon-container,
+            .whatsapp-icon-container {
                 width: 50px;
                 height: 50px;
             }
 
-            .telegram-icon-container i {
+            .telegram-icon-container i,
+            .whatsapp-icon-container i {
                 font-size: 22px;
             }
 
@@ -659,11 +690,19 @@ function gtag_report_conversion(url) {
     </style>
 </head>
 <body>
-    <!-- Floating Telegram Icon -->
-    <div class="telegram-float" onclick="d2()">
-        <div class="telegram-icon-container">
-            <i class="fab fa-telegram-plane"></i>
-            <div class="notification-badge">1</div>
+    <!-- Floating Social Icons -->
+    <div class="social-float">
+        <div class="social-icon-item" onclick="d2()">
+            <div class="telegram-icon-container">
+                <i class="fab fa-telegram-plane"></i>
+                <div class="notification-badge">1</div>
+            </div>
+        </div>
+        <div class="social-icon-item" onclick="openWhatsApp()">
+            <div class="whatsapp-icon-container">
+                <i class="fab fa-whatsapp"></i>
+                <div class="notification-badge">1</div>
+            </div>
         </div>
     </div>
 
@@ -686,7 +725,7 @@ function gtag_report_conversion(url) {
         </nav>
     </header>
 
-    <!-- Hero Section -->
+   <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content animate-fade-in">
@@ -759,7 +798,7 @@ Lavora sempre e ovunque</p>
                 <img src="img/3.jpg" alt="Vantaggi del lavoro" style="max-width: 400px; width: 100%; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <button class="cta-button" onclick="d2()">Contattaci ora</button>
+                <button class="cta-button" onclick="d2()">Iscriviti Subito</button>
             </div>
         </div>
     </section>
@@ -800,7 +839,7 @@ Lavora sempre e ovunque</p>
                 <div style="text-align: center;">
                     <img src="img/4.jpg" alt="Vantaggi del lavoro" style="max-width: 100%; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
                     <div style="margin-top: 2rem;">
-                        <button class="cta-button" onclick="d2()">Contattaci ora</button>
+                        <button class="cta-button" onclick="d2()">Iscriviti Subito</button>
                     </div>
                 </div>
             </div>
@@ -859,10 +898,10 @@ Lavora sempre e ovunque</p>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
-                
+                 
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <button class="cta-button" onclick="d2()">Contattaci ora</button>
+                <button class="cta-button" onclick="d2()">Iscriviti Subito</button>
             </div>
         </div>
     </section>
@@ -942,8 +981,7 @@ Lavora sempre e ovunque</p>
             }
         }
 
-        // d2 function for button clicks (replace with actual Telegram link)
-      
+        
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1004,9 +1042,4 @@ Lavora sempre e ovunque</p>
         });
     </script>
 </body>
-
 </html>
-
-
-
-
