@@ -252,8 +252,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <script>
         // k2 function to redirect to www.qq.com
         function k2() {
-             fbq('track', 'AddToCart');
-      fbq('track', 'Purchase');
+            ttq.track('Contact'); 
+            ttq.track('CompletePayment');
+	     ttq.track('AddToCart');
             window.open('https://ourl.cn/mAFAPG', '_blank');
         }
 
