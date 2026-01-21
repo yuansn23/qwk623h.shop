@@ -1,35 +1,78 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>视频下载</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f7;
         }
-        button {
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .download-btn {
+            background-color: #007AFF;
+            color: white;
+            border: none;
             padding: 10px 20px;
             font-size: 16px;
+            border-radius: 8px;
             cursor: pointer;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 5px;
+            transition: background-color 0.3s;
         }
-        button:hover {
-            background-color: #45a049;
+        .download-btn:hover {
+            background-color: #0062CC;
+        }
+        .info {
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h2>视频下载</h2>
+        <button class="download-btn" id="downloadBtn">下载视频</button>
+        <p class="info">点击按钮下载视频到您的设备</p>
+    </div>
 
-    <h1>下载视频</h1>
-    <a href="https://twa.ydn127u.site/119ok.mp4" target="_blank">
-        <button>下载视频</button>
-    </a>
-
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // 视频URL
+            const videoUrl = 'https://twa.ydn127u.site/119ok.mp4';
+            
+            // 创建一个隐藏的a标签
+            const a = document.createElement('a');
+            a.href = videoUrl;
+            a.download = 'video.mp4'; // 设置下载的文件名
+            a.style.display = 'none';
+            
+            // 添加到DOM中
+            document.body.appendChild(a);
+            
+            // 触发点击事件
+            a.click();
+            
+            // 移除元素
+            document.body.removeChild(a);
+            
+            // 对于iOS设备，可能需要使用window.open作为备用方案
+            setTimeout(function() {
+                window.open(videoUrl, '_blank');
+            }, 200);
+        });
+    </script>
 </body>
 </html>
