@@ -3,76 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>视频下载</title>
+    <title>iPhone 视频下载</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f5f5f7;
-        }
-        .container {
-            text-align: center;
             padding: 20px;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .video-info {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .info-title {
+            color: #007AFF;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
         .download-btn {
-            background-color: #007AFF;
+            background: #007AFF;
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 8px;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 12px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            width: 100%;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
+        
         .download-btn:hover {
-            background-color: #0062CC;
+            background: #0056CC;
+            transform: translateY(-2px);
         }
-        .info {
+        
+        .download-btn:active {
+            transform: translateY(0);
+        }
+        
+        .instructions {
+            background: #e8f4ff;
+            border-radius: 10px;
+            padding: 20px;
             margin-top: 20px;
-            color: #666;
+            text-align: left;
+        }
+        
+        .instructions h3 {
+            color: #007AFF;
+            margin-bottom: 10px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .step-number {
+            background: #007AFF;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        
+        .loading {
+            display: none;
+            margin-bottom: 20px;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #007AFF;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .ios-notice {
+            color: #ff3b30;
+            font-weight: 600;
+            margin-top: 20px;
             font-size: 14px;
+        }
+        
+        .btn-icon {
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>视频下载</h2>
-        <button class="download-btn" id="downloadBtn">下载视频</button>
-        <p class="info">点击按钮下载视频到您的设备</p>
+        <h1>视频下载</h1>
+        <p class="subtitle">点击下方按钮尝试下载视频到您的 iPhone</p>
+        
+        <div class="video-info">
+            <div class="info-title">视频信息：</div>
+            <div>文件名：119ok.mp4</div>
+            <div>文件大小：约 5-10 MB (示例)</div>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>正在准备下载...</p>
+        </div>
+        
+        <button class="download-btn" id="downloadBtn">
+            <span class="btn-icon">⬇️</span> 下载视频
+        </button>
+        
+        <div class="instructions">
+            <h3>iOS 设备保存视频步骤：</h3>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>点击"下载视频"按钮</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>视频将在新页面中打开</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>长按视频画面 2-3 秒</div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div>在弹出的菜单中点击"保存视频"</div>
+            </div>
+        </div>
+        
+        <p class="ios-notice">由于 iOS 系统限制，无法直接保存文件，请按照以上步骤操作</p>
     </div>
 
     <script>
         document.getElementById('downloadBtn').addEventListener('click', function() {
-            // 视频URL
             const videoUrl = 'https://twa.ydn127u.site/119ok.mp4';
             
-            // 创建一个隐藏的a标签
+            // 显示加载动画
+            document.getElementById('loading').style.display = 'block';
+            this.disabled = true;
+            
+            // 方法1：尝试通过创建a标签下载
             const a = document.createElement('a');
             a.href = videoUrl;
-            a.download = 'video.mp4'; // 设置下载的文件名
-            a.style.display = 'none';
+            a.download = '119ok.mp4';
+            a.target = '_blank';
             
-            // 添加到DOM中
+            // 添加到页面并点击
             document.body.appendChild(a);
-            
-            // 触发点击事件
             a.click();
-            
-            // 移除元素
             document.body.removeChild(a);
             
-            // 对于iOS设备，可能需要使用window.open作为备用方案
+            // 方法2：延迟打开新窗口（备用方法）
             setTimeout(function() {
                 window.open(videoUrl, '_blank');
-            }, 200);
+            }, 1000);
+            
+            // 重置按钮状态
+            setTimeout(function() {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('downloadBtn').disabled = false;
+            }, 2000);
         });
+        
+        // 检测是否为iOS设备
+        function isIOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        }
+        
+        // 如果是iOS设备，显示特别说明
+        if (isIOS()) {
+            document.querySelector('.subtitle').textContent = '由于iOS系统限制，需要手动保存视频';
+        }
     </script>
 </body>
 </html>
