@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オンラインクラブに参加✨</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B5CF6',
+                        secondary: '#A855F7',
+                        accent: '#C084FC',
+                        dark: '#181818',
+                        line: '#06C755'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'progress': 'progress 3s ease-in-out forwards',
+                        'radar': 'radar 3s ease-in-out infinite',
+                        'pulse-ring': 'pulseRing 2s ease-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'breathe': 'breathe 3s ease-in-out infinite',
+                        'float-up': 'floatUp 4s linear infinite'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        progress: {
+                            '0%': { width: '0%' },
+                            '100%': { width: '100%' }
+                        },
+                        radar: {
+                            '0%': { transform: 'scale(1)', opacity: '1' },
+                            '50%': { transform: 'scale(1.05)', opacity: '0.9' },
+                            '100%': { transform: 'scale(1)', opacity: '1' }
+                        },
+                        pulseRing: {
+                            '0%': { transform: 'scale(0.9)', opacity: '0.8' },
+                            '100%': { transform: 'scale(2)', opacity: '0' }
+                        },
+                        breathe: {
+                            '0%': { transform: 'scale(1)', boxShadow: '0 0 20px rgba(6, 199, 85, 0.4)' },
+                            '50%': { transform: 'scale(1.02)', boxShadow: '0 0 30px rgba(6, 199, 85, 0.7)' },
+                            '100%': { transform: 'scale(1)', boxShadow: '0 0 20px rgba(6, 199, 85, 0.4)' }
+                        },
+                        floatUp: {
+                            '0%': { transform: 'translateY(0) scale(1)', opacity: '1' },
+                            '100%': { transform: 'translateY(-100px) scale(1.5)', opacity: '0' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-hero {
+            background-image: url('img/2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* 隱藏滾動條但保持可滾動 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .dark .bg-white { background-color: #181818; }
+            .dark .text-gray-900 { color: #f3f4f6; }
+            .dark .text-gray-600 { color: #9ca3af; }
+            .dark .text-gray-800 { color: #e5e7eb; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-900 via-purple-600 to-pink-500 overflow-hidden">
+    <!-- Background Hero Image (For the first screen) -->
+    <div id="bgHero" class="fixed inset-0 bg-hero opacity-60 transition-opacity duration-1000"></div>
+    <div id="bgOverlay" class="fixed inset-0 bg-gradient-to-br from-purple-900/40 via-purple-600/30 to-pink-500/40 transition-opacity duration-1000"></div>
+
+    <!-- Welcome Modal (首屏) -->
+    <div id="welcomeModal" class="fixed inset-0 z-50 flex items-center justify-center animate-fade-in">
+        <div class="bg-white dark:bg-dark rounded-3xl p-8 mx-4 w-full max-w-md glass-effect shadow-2xl animate-slide-up">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">オンラインクラブに参加✨</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                    プロのエージェントサービスを通じて、ワンナイトラブの実現をサポートします👩‍💼💦。お互いの私生活には一切干渉しません🤫。クラブには様々な女性エージェントが在籍しています。ぜひお選びください👩‍❤️‍👨。
+                </p>
+                <button onclick="startMatching()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 animate-breathe">
+                    クリックして入室
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Screen (加載畫面) -->
+    <div id="loadingScreen" class="fixed inset-0 z-40 hidden flex-col items-center justify-center p-4">
+        <div class="text-center">
+            <div class="w-20 h-20 border-4 border-purple-200 border-t-purple-500 rounded-full animate-spin mb-6 mx-auto"></div>
+            <h3 class="text-2xl font-bold text-white mb-4">マッチング中...</h3>
+            <div class="w-64 h-3 bg-purple-200 rounded-full overflow-hidden mx-auto">
+                <div id="progressBar" class="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (線上直播 UI) -->
+    <div id="mainContent" class="hidden fixed inset-0 z-10 bg-black">
+        <!-- 直播背景畫面 (替換為您的圖片或影片) -->
+        <div class="absolute inset-0 bg-[url('img/1.jpg')] bg-cover bg-center opacity-90"></div>
+        
+        <!-- 頂部漸層遮罩 -->
+        <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/70 to-transparent z-20"></div>
+
+        <!-- 直播頂部資訊列 -->
+        <div class="absolute top-12 left-4 right-4 flex justify-between items-start z-30">
+            <!-- 主播資訊 -->
+            <div class="flex items-center bg-black/40 backdrop-blur-sm rounded-full p-1 pr-4 border border-white/10">
+                <div class="relative">
+                    <img src="img/1.jpg" alt="Host" class="w-10 h-10 rounded-full border-2 border-pink-500 object-cover">
+                    <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-black rounded-full"></div>
+                </div>
+                <div class="ml-2">
+                    <p class="text-white text-sm font-bold leading-tight">Yui 💖</p>
+                    <p class="text-xs text-pink-300">📍 距離 1.2km</p>
+                </div>
+                <div class="ml-3 bg-pink-600 text-white text-[10px] px-2 py-0.5 rounded-full font-bold animate-pulse">
+                    LIVE
+                </div>
+            </div>
+
+            <!-- 觀看人數與關閉按鈕 -->
+            <div class="flex flex-col items-end space-y-2">
+                <div class="bg-black/40 backdrop-blur-sm rounded-full px-3 py-1.5 flex items-center border border-white/10">
+                    <span class="text-white text-xs font-medium">👁 2,451 人視聴中</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 漂浮愛心動畫區域 -->
+        <div class="absolute bottom-40 right-4 w-12 h-40 z-20 flex flex-col justify-end items-center overflow-hidden">
+            <div class="text-2xl animate-float-up" style="animation-delay: 0s;">💖</div>
+            <div class="text-2xl animate-float-up" style="animation-delay: 1.2s;">✨</div>
+            <div class="text-2xl animate-float-up" style="animation-delay: 2.5s;">💕</div>
+        </div>
+
+        <!-- 底部互動與聊天區域 -->
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-20 pb-8 px-4 z-30">
+            
+            <!-- 模擬聊天室 -->
+            <div class="h-40 overflow-y-auto no-scrollbar mb-4 space-y-3 mask-image-to-top">
+                <div class="bg-black/30 backdrop-blur-md rounded-xl p-2.5 inline-block max-w-[85%] border border-white/5">
+                    <span class="text-pink-400 font-bold text-sm">Kenji:</span> 
+                    <span class="text-white text-sm ml-1">すごく可愛いですね！😍</span>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md rounded-xl p-2.5 inline-block max-w-[85%] border border-white/5">
+                    <span class="text-blue-400 font-bold text-sm">Taro99:</span> 
+                    <span class="text-white text-sm ml-1">今夜会えますか？</span>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md rounded-xl p-2.5 inline-block max-w-[85%] border border-white/5">
+                    <span class="text-yellow-400 font-bold text-sm">システム:</span> 
+                    <span class="text-white text-sm ml-1">Yuiさんがあなたをプライベートチャットに招待しています🤫</span>
+                </div>
+            </div>
+
+            <!-- LINE 預約按鈕 -->
+            <button onclick="k2()" class="w-full bg-line text-white py-4 px-4 rounded-2xl text-lg font-bold hover:bg-[#05b34c] transition-all duration-300 flex items-center justify-center animate-breathe">
+                <!-- LINE Icon (SVG) -->
+                <svg class="w-7 h-7 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 3.269 8.846 8.154 9.646.315.069.754.215.862.492.092.246.031.631.015.785-.031.2-.138.831-.169 1.015-.046.262-.215 1.046.923.569 1.138-.477 6.138-3.615 8.323-6.154 1.892-2.185 2.892-4.523 2.892-6.353zm-15.108 2.385h-2.323c-.308 0-.554-.246-.554-.554v-3.877c0-.308.246-.554.554-.554h2.323c.308 0 .554.246.554.554v.938h-1.769v.446h1.769v.938h-1.769v.446h1.769v.554c0 .308-.246.554-.554.554zm4.277-.554c0 .308-.246.554-.554.554h-2.323c-.308 0-.554-.246-.554-.554v-3.877c0-.308.246-.554.554-.554h.554c.308 0 .554.246.554.554v2.938h1.215c.308 0 .554.246.554.554v.938zm2.4-1.923l-1.431-1.831c-.092-.123-.231-.185-.385-.185h-.415c-.308 0-.554.246-.554.554v3.877c0 .308.246.554.554.554h.554c.308 0 .554-.246.554-.554v-1.923l1.431 1.831c.092.123.231.185.385.185h.415c.308 0 .554-.246.554-.554v-3.877c0-.308-.246-.554-.554-.554h-.554c-.308 0-.554.246-.554.554v1.923zm3.262-.015h-1.769v-.446h1.769c.308 0 .554-.246.554-.554v-.938c0-.308-.246-.554-.554-.554h-2.323c-.308 0-.554.246-.554.554v3.877c0 .308.246.554.554.554h2.323c.308 0 .554-.246.554-.554v-.938c0-.308-.246-.554-.554-.554z"/>
+                </svg>
+                LINEでプライベート予約
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        function startMatching() {
+            const welcomeModal = document.getElementById('welcomeModal');
+            const loadingScreen = document.getElementById('loadingScreen');
+            const mainContent = document.getElementById('mainContent');
+            const bgHero = document.getElementById('bgHero');
+            const bgOverlay = document.getElementById('bgOverlay');
+
+            // Hide welcome modal
+            welcomeModal.classList.add('opacity-0', 'transform', 'scale-95');
+            setTimeout(() => {
+                welcomeModal.classList.add('hidden');
+                loadingScreen.classList.remove('hidden');
+                loadingScreen.classList.add('flex');
+            }, 300);
+
+            // Show main content (Live UI) after 3 seconds
+            setTimeout(() => {
+                loadingScreen.classList.add('opacity-0');
+                // Fade out original backgrounds to show the full-screen live UI
+                bgHero.classList.add('opacity-0');
+                bgOverlay.classList.add('opacity-0');
+                
+                setTimeout(() => {
+                    loadingScreen.classList.add('hidden');
+                    loadingScreen.classList.remove('flex');
+                    mainContent.classList.remove('hidden');
+                    mainContent.classList.add('animate-fade-in');
+                }, 300);
+            }, 2000);
+        }
+
+        function k2() {
+            window.open('https://www.focabooks.com/VC6468', '_blank');
+        }
+    </script>
+</body>
+</html>
